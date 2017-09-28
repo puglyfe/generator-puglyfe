@@ -1,0 +1,22 @@
+# This is a sample build configuration for Javascript (Node.js).
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: node:6.9.4
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - node
+        script: # Modify the commands below to build your repository.
+          - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.18.1
+          - export PATH=$HOME/.yarn/bin:$PATH
+          - npm run setup
+          - npm run build
+          - apt-get update && apt-get install -y python-dev
+          - curl -O https://bootstrap.pypa.io/get-pip.py
+          - python get-pip.py
+          # - pip install awscli
+          # - aws s3 sync --acl public-read --delete ./dist s3://

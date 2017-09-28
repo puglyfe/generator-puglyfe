@@ -1,0 +1,16 @@
+image: node:6.9.4
+
+pages:
+  cache:
+    paths:
+    - node_modules/
+
+  script:
+  - npm install -g gulp-cli
+  - npm run setup
+  - npm run build
+  artifacts:
+    paths:
+    - dist
+  only:
+    - master

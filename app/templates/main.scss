@@ -1,0 +1,6 @@
+@import 'normalize/import-now';
+<% if (includeBootstrap) { %>@import 'bootstrap';<% } %>
+
+body {
+  background-color: #fff;
+}

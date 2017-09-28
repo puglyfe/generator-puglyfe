@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Charley",
+      "authorEmail": "ctpugmire@gmail.com",
+      "authorUrl": "http://charleypugmire.me"
+    }
+  }
+}
